@@ -25,7 +25,6 @@ fn utf8_chunk_udf(input: &[ArrayRef]) -> datafusion::error::Result<ArrayRef> {
 }
 
 fn utf8_chunk(input: &ArrayRef, size: usize) -> Result<ArrayRef> {
-    // TODO support different string compatible types, largeutf8, dictionary encoding
     let input = input
         .as_any()
         .downcast_ref::<StringArray>()
