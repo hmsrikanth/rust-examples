@@ -19,16 +19,27 @@ impl ArrowDataTypeExt for ArrowDataType {
     }
 }
 
+fn array_ref_to_usize(array_ref: &ArrayRef) -> Option<usize> {
+    if let Some(int64_array) = array_ref.as_any().downcast_ref::<Int64Array>() {
+        if int64_array.len() >= 1 {
+            return Some(int64_array.value(0) as usize);
+        }
+    }
+    None // Conversion failed or array has less than one element
+}
 #[allow(dead_code)]
 fn utf8_chunk_udf(input: &[ArrayRef]) -> datafusion::error::Result<ArrayRef> {
-    utf8_chunk(&input[0], 2).map_err(|e| e.into())
+    utf8_chunk(&input[0], &input[1]).map_err(|e| e.into())
 }
 
-fn utf8_chunk(input: &ArrayRef, size: usize) -> Result<ArrayRef> {
+fn utf8_chunk(input: &ArrayRef, size: &ArrayRef) -> Result<ArrayRef> {
     let input = input
         .as_any()
         .downcast_ref::<StringArray>()
         .expect("string array");
+
+    let size = array_ref_to_usize(size).unwrap_or(4000);//4000 is default value
+
 
     let mut builder = ListBuilder::new(StringBuilder::new());
     input.into_iter().for_each(|s| {
@@ -51,7 +62,7 @@ fn utf8_chunk(input: &ArrayRef, size: usize) -> Result<ArrayRef> {
 async fn test_string_to_array() -> anyhow::Result<()> {
     let udf = create_udf(
         "utf8_chunk",
-        vec![ArrowDataType::Utf8],
+        vec![ArrowDataType::Utf8,ArrowDataType::Int64],
         Arc::new(ArrowDataType::list_of(ArrowDataType::Utf8)),
         Volatility::Immutable,
         make_scalar_function(utf8_chunk_udf),
@@ -63,7 +74,7 @@ async fn test_string_to_array() -> anyhow::Result<()> {
 
 
 
-    let df = df.select(vec![col("data"), udf.call(vec![col("data")]).alias("c_chunks")])?;
+    let df = df.select(vec![col("data"), udf.call(vec![col("data"), lit(2)]).alias("c_chunks")])?;
     let df = df.unnest_column("c_chunks")?;
 
     //let count = df.count().await?;
