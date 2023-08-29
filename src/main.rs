@@ -45,8 +45,8 @@ fn utf8_chunk(input: &ArrayRef, size: &ArrayRef) -> Result<ArrayRef> {
     input.into_iter().for_each(|s| {
         if let Some(s) = s {
             let value_builder = builder.values();
-            s.chars().chunks(size).into_iter().for_each(|c| {
-                value_builder.append_value(c.collect::<String>());
+            s.chars().chunks(size).into_iter().enumerate().for_each(|(i,c)| {
+                value_builder.append_value(format!("{}:{}",i,c.collect::<String>()));
             });
             builder.append(true);
         } else {
@@ -76,10 +76,12 @@ async fn test_string_to_array() -> anyhow::Result<()> {
 
     let df = df.select(vec![col("data"), udf.call(vec![col("data"), lit(2)]).alias("c_chunks")])?;
     let df = df.unnest_column("c_chunks")?;
-
+    let new_df = df.select(
+        vec![
+            split_part(col("c_chunks"),lit(":"),lit(1)).alias("pos"),split_part(col("c_chunks"),lit(":"),lit(2)).alias("chunk")])?;
     //let count = df.count().await?;
     //assert_eq!(count, 23);
-    df.show().await?;
+    new_df.show().await?;
     Ok(())
 }
 fn get_csv_option<'a>() -> CsvReadOptions<'a> {
