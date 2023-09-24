@@ -12,13 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+            ref: develop
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
       - run: cargo rustdoc --target-dir docs
+      - run: |
+              git add .
+              git commit -m "generated"
+              git push
       - name: pull-request
-        uses: repo-sync/pull-request@v2
+        uses: repo-sync/pull-request@v4
         with:
           destination_branch: "develop"
           github_token: ${{ secrets.GITHUB_TOKEN }}
