@@ -1,0 +1,20 @@
+/home/runner/work/rust-examples/rust-examples/docs/debug/deps/snap-c2813d22ce7a4d12.rmeta: /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/lib.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/bytes.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/compress.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/crc32.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/crc32_table.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/decompress.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/error.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/frame.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/raw.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/read.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/tag.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/write.rs /home/runner/work/rust-examples/rust-examples/docs/debug/build/snap-fed9956ae4a0459a/out/crc32_table.rs /home/runner/work/rust-examples/rust-examples/docs/debug/build/snap-fed9956ae4a0459a/out/tag.rs
+
+/home/runner/work/rust-examples/rust-examples/docs/debug/deps/snap-c2813d22ce7a4d12.d: /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/lib.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/bytes.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/compress.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/crc32.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/crc32_table.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/decompress.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/error.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/frame.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/raw.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/read.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/tag.rs /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/write.rs /home/runner/work/rust-examples/rust-examples/docs/debug/build/snap-fed9956ae4a0459a/out/crc32_table.rs /home/runner/work/rust-examples/rust-examples/docs/debug/build/snap-fed9956ae4a0459a/out/tag.rs
+
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/lib.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/bytes.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/compress.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/crc32.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/crc32_table.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/decompress.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/error.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/frame.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/raw.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/read.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/tag.rs:
+/home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/snap-1.1.0/src/write.rs:
+/home/runner/work/rust-examples/rust-examples/docs/debug/build/snap-fed9956ae4a0459a/out/crc32_table.rs:
+/home/runner/work/rust-examples/rust-examples/docs/debug/build/snap-fed9956ae4a0459a/out/tag.rs:
+
+# env-dep:OUT_DIR=/home/runner/work/rust-examples/rust-examples/docs/debug/build/snap-fed9956ae4a0459a/out
