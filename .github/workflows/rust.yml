@@ -23,7 +23,7 @@ jobs:
       - run: cargo rustdoc --target-dir docs
       - run: |
               git add .
-              git commit -m "generated"
+              git commit -m "generated docs"
               git push
       - name: pull-request
         uses: repo-sync/pull-request@v2
