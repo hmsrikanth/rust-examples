@@ -29,10 +29,4 @@ jobs:
       - run:  git add .
       - run:  git commit -m "generated docs"
       - run:  git push
-      - name: pull-request
-        uses: repo-sync/pull-request@v2
-        with:
-          destination_branch: "develop"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_label: "feature, automated pr"
-          pr_title: "docs creation"
+      - run: gh pr create -B master -H develop --title 'Rust Docs' --body 'Created by Github action'
