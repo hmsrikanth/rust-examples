@@ -16,11 +16,11 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - run:   git branch develop
-              cargo rustdoc --target-dir docs
-              git add .
-              git commit -m "generated docs"
-              git push
+      - run:  git branch develop
+      - run:  cargo rustdoc --target-dir docs
+      - run:  git add .
+      - run:  git commit -m "generated docs"
+      - run:  git push
       - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
