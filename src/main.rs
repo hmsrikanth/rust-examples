@@ -70,7 +70,7 @@ async fn test_string_to_array() -> anyhow::Result<()> {
 
     let ctx = SessionContext::new();
     let df = ctx.read_csv("data/input.csv",get_csv_option()).await?;
-    println!("{}", df.schema());
+    println!("justsomedate{}", df.schema());
 
 
 
